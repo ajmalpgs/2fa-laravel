@@ -1,0 +1,41 @@
+{
+    "name": "2fa/laravel-mfa",
+    "description": "Reusable multi-factor authentication package for Laravel 8 session applications.",
+    "version": "1.0.0",
+    "type": "library",
+    "license": "proprietary",
+    "require": {
+        "php": ">=8.0 <8.5",
+        "illuminate/support": "8.*",
+        "illuminate/routing": "8.*",
+        "illuminate/database": "8.*",
+        "bacon/bacon-qr-code": "^2.0",
+        "pragmarx/google2fa": "^8.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0",
+        "phpunit/phpunit": "^9.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "TwoFA\\LaravelMfa\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "TwoFA\\LaravelMfa\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "TwoFA\\LaravelMfa\\MfaServiceProvider"
+            ],
+            "aliases": {
+                "Mfa": "TwoFA\\LaravelMfa\\Facades\\Mfa"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
